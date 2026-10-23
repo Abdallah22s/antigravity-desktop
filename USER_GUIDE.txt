@@ -1,0 +1,38 @@
+Antigravity Desktop 1.2.0
+=========================
+
+Desktop edition maintained by Abdallah22s.
+Updates and support: https://github.com/Abdallah22s/antigravity-desktop
+
+No OAuth client credentials are bundled. Desktop activation/restoration needs
+none. Optional CLI token refresh requires ANTIGRAVITY_OAUTH_CLIENT_ID and
+ANTIGRAVITY_OAUTH_CLIENT_SECRET supplied externally for the matching OAuth client.
+
+1. Install the application using the Setup file.
+2. Close Antigravity and its background processes.
+3. Open Antigravity Desktop and click Activate.
+4. If several locations are found, choose the installation you use and Continue.
+   If none is found, choose its folder or a component file in that same dialog.
+   Missing components are skipped. Unsupported builds are left unchanged.
+
+To undo changes: Additional options, Restore originals. Discovery runs again.
+Updating Antigravity can overwrite its patches. Click Activate again.
+Discovery is fresh on every operation. Old missing paths and duplicate files are
+ignored. Different installations are never selected just by modification date.
+File changes, invalid backups, inaccessible files and unsupported builds are
+reported; partial completion is not presented as complete success.
+The app does not kill processes, elevate permissions, delete old installations
+or modify PATH. Close running apps or repair/reinstall corrupt builds as needed.
+
+If a problem occurs, an error dialog offers Copy report. Paste the report into
+a message to the person who provided the app. Reports do not contain access
+tokens, saved accounts or personal file paths. No reports are sent automatically.
+Startup failures show a Windows dialog; press Ctrl+C to copy that dialog.
+
+The installer does not require administrator rights. Files installed under
+protected locations may require an account with permission to modify them.
+This utility does not grant paid subscriptions or server-side entitlements.
+Uninstalling this utility does not restore modified Antigravity files. Restore
+originals before uninstalling if you want to undo the local changes.
+
+Windows 10 (build 19041+) or Windows 11, x64. Python is bundled.

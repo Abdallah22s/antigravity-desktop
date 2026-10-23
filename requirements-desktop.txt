@@ -1,0 +1,2 @@
+# No pip runtime dependencies. The optional GUI uses Python's tkinter/ttk.
+# Install Python with Tcl/Tk support (included in the official Windows installer).
