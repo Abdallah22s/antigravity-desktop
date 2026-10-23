@@ -1347,7 +1347,7 @@ def acct_logout(target_type):
     if cur:
         try: profile_save(target_type, cur, _snapshot(target_type)); info(f"synced '{cur}' first")
         except Exception as e: warn(f"couldn't sync '{cur}': {e}")
-    
+
     if target_type == "cli-manager":
         cred_delete(CRED_TARGET)
         ok("live CLI + Manager + Extension login cleared locally (NOT revoked) - launch Antigravity, "
@@ -1368,7 +1368,7 @@ def run_accounts(argv):
         warn("account management is Windows-only"); return 2
     if not argv:
         warn("usage: accounts <cli-manager|ide> <list|save|use|rename|current|logout|rm|usage> [name1] [name2]"); return 1
-    
+
     target_type = argv[0].lower()
     if target_type not in ("cli-manager", "ide"):
         warn(f"unknown account target '{target_type}' (choose: cli-manager | ide)")
@@ -2033,13 +2033,13 @@ def _render(console, paths, status):
     tbl.add_column("Status", no_wrap=True)
     tbl.add_column("Account", style="bold green", no_wrap=True)
     tbl.add_column("Location", style="dim", no_wrap=True, overflow="ellipsis", ratio=1)
-    
+
     for t in ("cli", "manager", "extension", "ide"):
         path, st = paths[t], status[t]
         acct = cur_cli_manager if t in ("cli", "manager", "extension") else cur_ide if t == "ide" else None
         acct_str = acct if acct else "[white dim]—[/]"
         tbl.add_row(SPEC[t]["name"], f"[{_STYLE[st]}]{_ICON[st]} {st}[/]", acct_str, path or "—")
-        
+
     console.print(Panel(tbl, title="[bold white]agy-manager[/] · Antigravity environment manager",
                         subtitle="[dim]↑↓ move · enter select · space toggle[/]", border_style="cyan"))
 
